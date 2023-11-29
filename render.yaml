@@ -1,5 +1,5 @@
 databases:
-  - name: Zuwairanajma
+  - name: zuwairanajma
     databaseName: zuwairanajma
     user: zuwairanajma_user
 

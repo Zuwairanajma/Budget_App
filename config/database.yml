@@ -20,7 +20,7 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: postgres
   password: '13'
-development:
+  development:
   <<: *default
   database: budget_app_development
 
@@ -80,6 +80,4 @@ test:
 #
 production:
   <<: *default
-  database: budget_app_production
-  username: budget_app
-  password: 13
+  url: <%= ENV['DATABASE_URL'] %>
