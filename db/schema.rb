@@ -10,52 +10,53 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 20_231_128_075_544) do
-  enable_extension 'plpgsql'
+ActiveRecord::Schema[7.1].define(version: 2023_11_28_075544) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
-  create_table 'category_items', force: :cascade do |t|
-    t.bigint 'group_category_id', null: false
-    t.bigint 'entity_category_id', null: false
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.index ['entity_category_id'], name: 'index_category_items_on_entity_category_id'
-    t.index ['group_category_id'], name: 'index_category_items_on_group_category_id'
+  create_table "category_items", force: :cascade do |t|
+    t.bigint "group_category_id", null: false
+    t.bigint "entity_category_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["entity_category_id"], name: "index_category_items_on_entity_category_id"
+    t.index ["group_category_id"], name: "index_category_items_on_group_category_id"
   end
 
-  create_table 'entity_categories', force: :cascade do |t|
-    t.string 'name'
-    t.decimal 'amount'
-    t.bigint 'author_id', null: false
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.index ['author_id'], name: 'index_entity_categories_on_author_id'
+  create_table "entity_categories", force: :cascade do |t|
+    t.string "name"
+    t.decimal "amount"
+    t.bigint "author_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["author_id"], name: "index_entity_categories_on_author_id"
   end
 
-  create_table 'group_categories', force: :cascade do |t|
-    t.string 'name'
-    t.string 'icon'
-    t.bigint 'author_id', null: false
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.integer 'true_id'
-    t.index ['author_id'], name: 'index_group_categories_on_author_id'
+  create_table "group_categories", force: :cascade do |t|
+    t.string "name"
+    t.string "icon"
+    t.bigint "author_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "true_id"
+    t.index ["author_id"], name: "index_group_categories_on_author_id"
   end
 
-  create_table 'users', force: :cascade do |t|
-    t.string 'name'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.string 'email', default: '', null: false
-    t.string 'encrypted_password', default: '', null: false
-    t.string 'reset_password_token'
-    t.datetime 'reset_password_sent_at'
-    t.datetime 'remember_created_at'
-    t.index ['email'], name: 'index_users_on_email', unique: true
-    t.index ['reset_password_token'], name: 'index_users_on_reset_password_token', unique: true
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key 'category_items', 'entity_categories'
-  add_foreign_key 'category_items', 'group_categories'
-  add_foreign_key 'entity_categories', 'users', column: 'author_id'
-  add_foreign_key 'group_categories', 'users', column: 'author_id'
+  add_foreign_key "category_items", "entity_categories"
+  add_foreign_key "category_items", "group_categories"
+  add_foreign_key "entity_categories", "users", column: "author_id"
+  add_foreign_key "group_categories", "users", column: "author_id"
 end
