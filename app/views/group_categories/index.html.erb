@@ -1,0 +1,24 @@
+<%= render 'navbar/navbar', title: "Categories", back_link: false %>
+<div class="categories-page">
+
+  <% @group_categories.each do |category| %> 
+    <%= link_to group_category_path(category) do %>
+      <div class="category">
+
+        <div class="icon-name-amount d-flex">
+          <%= content_tag :i, "", class: "fa #{category.icon}" %>
+          <p><%= category.name %></p>
+       
+          <p>$ <%= category.total_amount %></p>
+           </div> 
+          <div class="category-actions">
+       <%= link_to 'Show', group_category_path(category), class: "show-link" %>
+      </div>
+      </div>
+    <% end %>
+  <% end %>
+
+  <div class="add-btn">
+      <%= link_to 'NEW CATEGORY', new_group_category_path %>
+  </div>
+</div>

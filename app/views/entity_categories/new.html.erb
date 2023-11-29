@@ -1,0 +1,18 @@
+<%# <%= render 'navbar/navbar' %>
+<div class="item-form-container">
+  <%= form_for(@entity_category, url: group_category_entity_categories_path(@category), method: :post, html: { class: "item-form" }) do |f| %>
+    <div class="input-field">
+      <%= f.text_field :name,  placeholder: "Enter name", required: true %>
+    </div>
+
+    <br>
+    
+    <div class="input-field">
+      <%= f.number_field :amount, placeholder: "Enter amount", required: true %>
+    </div>
+
+  <div class="add-btn">
+    <%= f.submit "Create Item" %>
+  </div>
+  <% end %>
+</div>

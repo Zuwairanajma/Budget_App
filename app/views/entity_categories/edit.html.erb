@@ -1,0 +1,21 @@
+<h1>Edit Entity Category</h1>
+
+<%= form_for([@group_category, @entity_category], url: group_category_entity_category_path(@group_category, @entity_category), method: :patch) do |f| %>
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <!-- Add other form fields as needed -->
+   <div class="field">
+    <%= f.label :amount %>
+    <%= f.number_field :amount %>
+  </div>
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<%= link_to 'Back', group_category_path(@group_category) %>

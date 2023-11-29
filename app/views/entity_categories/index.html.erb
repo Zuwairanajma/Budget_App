@@ -1,0 +1,8 @@
+<!-- app/views/entity_categories/index.html.erb -->
+<h1>Entity Categories</h1>
+
+<ul>
+  <% @entity_categories.each do |entity_category| %>
+    <li><%= entity_category.name %></li>
+  <% end %>
+</ul>

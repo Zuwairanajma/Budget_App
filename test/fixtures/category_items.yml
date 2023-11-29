@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  group_category: one
+  entity_category: one
+
+two:
+  group_category: two
+  entity_category: two
