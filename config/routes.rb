@@ -22,8 +22,5 @@ Rails.application.routes.draw do
 
   resources :group_categories, only: %i[index new show create update edit destroy] do
     resources :entity_categories, only: %i[index new create edit update destroy]
-    #   member do
-    #     delete 'delete'
-    # end
   end
 end

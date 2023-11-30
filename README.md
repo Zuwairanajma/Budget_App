@@ -24,7 +24,7 @@
 
 # 📖 budget-app  <a name="about-project"></a>
 
-**budget-app** is a mobile web application built using Ruby on Rails that helps users manage their spending. With this app, users can register an account and log in, ensuring that their data remains private and secure.
+**budget-app** is a mobile web application built using Ruby on Rails that helps users manage their spending. With this app, users can register an account and log in, ensuring that their data remains private and secure. Users can track their expenditures and edit their budgets when necessary.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -55,6 +55,9 @@
 <!-- LIVE DEMO -->
 
 ## 🚀 Live Demo <a name="live-demo"></a>
+[Live demo link](https://budget-2qy2.onrender.com/)
+
+[Presentation Video](https://www.loom.com/share/6c17e7183fc3451f9726eb5d21baaa5d?sid=7ad9c9ba-b760-4b20-9a1d-a94dd63a8c91)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -127,6 +130,8 @@ To run tests, run the following command: Install through : gem install rspec
 
 - [ ] **Add delete functionality.**
 - [ ] **Improve the styling.**
+- [ ] **Improve the track records to include descriptions.**
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

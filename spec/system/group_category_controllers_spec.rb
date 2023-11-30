@@ -1,4 +1,3 @@
-# spec/controllers/category_controllers_spec.rb
 require 'rails_helper'
 RSpec.describe 'GroupCategories', type: :system do
   include Devise::Test::IntegrationHelpers

@@ -14,7 +14,6 @@ RSpec.describe 'GroupCategories', type: :request do
   end
   describe 'GET /index' do
     it 'returns http success' do
-      # get "/group_categories/index"
       get group_categories_path
       expect(response).to have_http_status(:success)
     end
@@ -22,7 +21,6 @@ RSpec.describe 'GroupCategories', type: :request do
 
   describe 'GET /show' do
     it 'returns http success' do
-      # get "/group_categories/show"
       get group_category_path(category)
       expect(response).to have_http_status(:success)
     end
@@ -30,7 +28,6 @@ RSpec.describe 'GroupCategories', type: :request do
 
   describe 'GET /new' do
     it 'returns http success' do
-      # get "/group_categories/new"
       get new_group_category_path
       expect(response).to have_http_status(:success)
     end
