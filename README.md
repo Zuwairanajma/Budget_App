@@ -1,5 +1,10 @@
-<!-- TABLE OF CONTENTS -->
 
+<a name="readme-top"></a>
+<div align="center">
+  <img src="budget_app.png" alt="budget app logo" width="140"  height="auto" />
+  <br/>
+ <h2><b>BUDGET APP</b></h2>
+ 
 # 📗 Table of Contents
 
 - [📖 About the Project](#about-project)

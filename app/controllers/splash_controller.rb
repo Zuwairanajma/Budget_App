@@ -1,5 +1,3 @@
 class SplashController < ApplicationController
-  def index
-    # Your index action logic goes here
-  end
+  def index; end
 end

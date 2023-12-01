@@ -100,7 +100,6 @@ form {
   padding: 0 10px;
 }
 
-/* Add this to your stylesheets or in a style tag within your HTML file */
 .icon-name-amount {
   display: flex;
   align-items: center;
@@ -108,15 +107,15 @@ form {
 }
 
 .icon-name-amount p {
-  margin: 0; /* Remove default margin for paragraphs */
-  margin-right: 10px; /* Adjust the spacing between elements */
+  margin: 0;
+  margin-right: 10px;
 }
 
 .category-actions {
-  margin-right: 100px; /* Move the actions to the right */
+  margin-right: 100px;
 }
 
 .icon-name-amount i {
-  font-size: 24px; /* Adjust the font-size as needed */
-  margin-right: 10px; /* Adjust the spacing between elements */
+  font-size: 24px;
+  margin-right: 10px;
 }

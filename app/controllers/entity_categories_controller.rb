@@ -24,16 +24,12 @@ class EntityCategoriesController < ApplicationController
     end
   end
 
-  # def edit
-  #   @entity_category = current_user.entity_categories.find(params[:id])
-  # end
   def edit
     @group_category = GroupCategory.find(params[:group_category_id])
     @entity_category = current_user.entity_categories.find(params[:id])
   end
 
   def update
-    #   @entity_category = current_user.entity_categories.find(params[:id])
     @entity_category = @group_category.entity_categories.find(params[:id])
 
     if @entity_category.update(entity_category_params)
@@ -64,6 +60,5 @@ class EntityCategoriesController < ApplicationController
   def set_group_category
     @group_category = GroupCategory.find_by(id: params[:group_category_id])
     redirect_to root_path, alert: 'Invalid Group Category' unless @group_category
-    # @group_categories = current_user.group_categories
   end
 end
