@@ -1,0 +1,49 @@
+<h1 class="text-center">Category Summary</h1>
+<%= render 'navbar/navbar', back_link: group_categories_path, title:"TRANSACTIONS" %>
+
+<div class="category-section">
+  <div class="category-header">
+    <div class="category-header-title">
+      <div class="cat-detail">
+        <div class="category-icon">
+          <%= content_tag :i, "", class: "fa #{@group_category.icon}" %>
+        </div>  
+        <div class="category-name">
+          <%= @group_category.name %>
+        </div>
+      </div>
+      <div class="author-container">
+        <div class="category-author">
+          <%= @group_category.user.full_name %>
+        </div>
+      </div>
+    </div>
+    
+    <div class="category-amount">
+      Total amount $ <%= @group_category.entity_categories.sum(:amount) %>
+    </div>
+    
+  </div>
+
+  <div class="items-list">
+    <% @entity_categories.order(created_at: :desc).each do |entity_category| %>
+      <div class="item">
+        <div class="item-section">
+          <div class="item-name">
+            <%= entity_category.name %>
+          </div>
+          <div class="item-amount">
+            $ <%= entity_category.amount %>
+          </div>
+           <div class="item-actions">
+      <%= link_to 'Edit', edit_group_category_entity_category_path(@group_category, entity_category), class: "edit-link" %>
+    </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="add-btn">
+    <%= link_to 'ADD TRANSACTION', new_group_category_entity_category_path(@group_category),  class: "add-link" %>
+  </div>
+</div>
