@@ -19,27 +19,6 @@ class GroupCategoriesController < ApplicationController
     end
   end
 
-  def edit
-    @group_category = current_user.group_categories.find(params[:id])
-  end
-
-  def update
-    @group_category = current_user.group_categories.find(params[:id])
-
-    if @group_category.update(group_category_params)
-      redirect_to group_categories_path, notice: 'Category was successfully updated.'
-    else
-      render :edit
-    end
-  end
-
-  def destroy
-    @group_category = current_user.group_categories.find(params[:id])
-    @group_category.destroy
-
-    redirect_to group_categories_path, notice: 'Category was successfully destroyed.'
-  end
-
   private
 
   def group_category_params

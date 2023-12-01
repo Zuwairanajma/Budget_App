@@ -1,11 +1,11 @@
 databases:
-  - name: zuwairanajma
-    databaseName: zuwairanajma
-    user: zuwairanajma_user
+  - name: budgetapp
+    databaseName: budgetapp_qh3v
+    user: budgetapp_qh3v_user
 
 services:
   - type: web
-    name: Budget
+    name: budgetapp
     runtime: ruby
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec puma -C config/puma.rb"
