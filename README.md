@@ -55,9 +55,9 @@
 <!-- LIVE DEMO -->
 
 ## 🚀 Live Demo <a name="live-demo"></a>
-[Live demo link](https://budget-2qy2.onrender.com/)
+[Live demo link](https://budgetapp-nxul.onrender.com/)
 
-[Presentation Video](https://www.loom.com/share/6c17e7183fc3451f9726eb5d21baaa5d?sid=7ad9c9ba-b760-4b20-9a1d-a94dd63a8c91)
+[Presentation Video](https://www.loom.com/share/d74e2b661b724474b00db232a84a5a22?sid=009e6acf-0993-413d-8e35-bfd6876164cc)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
