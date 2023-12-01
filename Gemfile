@@ -72,5 +72,6 @@ group :test do
 end
 gem 'devise'
 
+gem 'bootstrap', '~> 5.0'
 gem 'cancancan'
 gem 'font-awesome-rails'

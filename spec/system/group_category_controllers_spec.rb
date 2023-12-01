@@ -3,14 +3,14 @@ RSpec.describe 'GroupCategories', type: :system do
   include Devise::Test::IntegrationHelpers
   before(:each) do
     @user = User.create(
-      name: 'Juwairiyya',
+      full_name: 'Juwairiyya',
       email: 'juwairiyyasadiq@gmail.com',
       password: 'password'
     )
     @category = GroupCategory.create(
-      author_id: @user.id,
+      user_id: @user.id,
       name: 'Juwairiyya',
-      icon: 'icon'
+      icon: GroupCategory::ICONS.keys.first
     )
     sign_in @user
   end
@@ -30,7 +30,7 @@ RSpec.describe 'GroupCategories', type: :system do
   end
   describe 'GroupCategory Show' do
     before(:each) do
-      visit group_category_path(@category)
+      visit group_category_entity_categories_path(@category)
     end
     it 'should navigate to the "Add transaction" page when clicking on "Add transaction"' do
       expect(page).to have_link('ADD TRANSACTION', href: new_group_category_entity_category_path(@category))

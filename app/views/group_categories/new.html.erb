@@ -1,7 +1,7 @@
 <%= render 'navbar/navbar', back_link: 
 group_categories_path, title:"New Category" %>
 
-<%=form_for @category, html: {class:""} do |f| %>
+<%=form_for @group_category, html: {class:""} do |f| %>
   <div class="input-field">
     <%= f.label :name %>
     <%= f.text_field :name, {required: true} %>

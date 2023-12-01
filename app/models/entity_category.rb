@@ -1,5 +1,8 @@
 class EntityCategory < ApplicationRecord
-  belongs_to :author, class_name: 'User', foreign_key: 'author_id'
-  has_many :category_items, dependent: :destroy
-  has_many :group_categories, through: :category_items
+  belongs_to :user
+  belongs_to :group_category
+
+  validates :name, presence: true
+  validates :amount, presence: true, numericality: { greater_than: 0 }
+  validates :group_category, presence: true
 end

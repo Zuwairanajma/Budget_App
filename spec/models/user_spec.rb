@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  let(:user) { User.create!(name: 'Juwairiyya', email: 'juwairiyya@test.com', password: 'password') }
+  let(:user) { User.create!(full_name: 'Juwairiyya', email: 'juwairiyya@test.com', password: 'password') }
 
   describe 'validations' do
     it 'should be valid with all valid attributes' do
@@ -9,7 +9,7 @@ RSpec.describe User, type: :model do
     end
 
     it 'should be valid if name is present' do
-      user.name = nil
+      user.full_name = 'Juwairiyya'
       expect(user).to be_valid
     end
   end

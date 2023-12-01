@@ -4,8 +4,7 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
     <div class="field">
-      <%= f.label :fullname %><br />
-      <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+      <%= f.text_field :full_name, placeholder: "Full name", autofocus: true, class: "new_sign_up_info" %>
     </div>
 
   <div class="field">

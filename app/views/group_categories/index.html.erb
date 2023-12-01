@@ -1,18 +1,18 @@
 <%= render 'navbar/navbar', title: "Categories", back_link: false %>
 <div class="categories-page">
 
-  <% @group_categories.each do |category| %> 
-    <%= link_to group_category_path(category) do %>
+  <% @group_categories.each do |group_category| %>
+   <%= link_to group_category_entity_categories_path(group_category) do %>
       <div class="category">
 
         <div class="icon-name-amount d-flex">
-          <%= content_tag :i, "", class: "fa #{category.icon}" %>
-          <p><%= category.name %></p>
+          <%= content_tag :i, "", class: "fa #{group_category.icon}" %>
+          <p><%= group_category.name %></p>
        
-          <p>$ <%= category.total_amount %></p>
+          <p>$ <%= group_category.total_amount %></p>
            </div> 
           <div class="category-actions">
-       <%= link_to 'Show', group_category_path(category), class: "show-link" %>
+       <%= link_to 'Show', group_category_path(group_category), class: "show-link" %>
       </div>
       </div>
     <% end %>

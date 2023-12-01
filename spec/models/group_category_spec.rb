@@ -1,10 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe GroupCategory, type: :model do
-  let(:user) { User.create!(name: 'Juwairiyya', email: 'juwairiyya@test.com', password: 'password') }
-  let(:category) { GroupCategory.create!(author: user, name: 'Juwairiyya', icon: 'icon') }
-  let!(:entity_category) { EntityCategory.create!(author: user, name: 'Juwairiyya', amount: 500) }
-  let!(:category_item) { CategoryItem.create!(group_category: category, entity_category:) }
+  let(:user) { User.create!(full_name: 'Juwairiyya', email: 'juwairiyya@test.com', password: 'password') }
+  let(:category) { GroupCategory.create!(user:, name: 'Juwairiyya', icon: GroupCategory::ICONS.keys.first) }
+  let!(:entity_category) do
+    EntityCategory.create!(user:, name: 'Juwairiyya', amount: 500, group_category: category)
+  end
 
   describe 'validations' do
     it 'should be valid with all valid attributes' do
@@ -12,14 +13,14 @@ RSpec.describe GroupCategory, type: :model do
     end
 
     it 'should  be valid if name is present' do
-      category.name = nil
+      category.name = 'Juwairiyya'
       expect(category).to be_valid
     end
   end
 
   describe 'associations' do
     it 'should belong to the correct user' do
-      expect(category.author).to eql user
+      expect(category.user).to eql user
     end
 
     it 'should include correct item' do

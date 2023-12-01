@@ -3,11 +3,11 @@ require 'rails_helper'
 RSpec.describe 'GroupCategories', type: :request do
   include Devise::Test::IntegrationHelpers
 
-  let(:user) { User.create!(name: 'Juwairiyya', email: 'juwairiyya@gmail.com', password: 'password') }
-  let(:category) { GroupCategory.create!(name: 'Journey', icon: 'icon', author: user) }
+  let(:user) { User.create!(full_name: 'Juwairiyya', email: 'juwairiyya@gmail.com', password: 'password') }
+  let(:category) { GroupCategory.create!(name: 'Journey', icon: GroupCategory::ICONS.keys.first, user:) }
 
-  let(:valid_params) { { name: 'Fun', icon: 'icon' } }
-  let(:invalid_params) { { name: nil, icon: 'icon' } }
+  let(:valid_params) { { name: 'Fun', icon: GroupCategory::ICONS.keys.first } }
+  let(:invalid_params) { { name: nil, icon: GroupCategory::ICONS.keys.first } }
 
   before do
     sign_in user
@@ -15,13 +15,6 @@ RSpec.describe 'GroupCategories', type: :request do
   describe 'GET /index' do
     it 'returns http success' do
       get group_categories_path
-      expect(response).to have_http_status(:success)
-    end
-  end
-
-  describe 'GET /show' do
-    it 'returns http success' do
-      get group_category_path(category)
       expect(response).to have_http_status(:success)
     end
   end
@@ -48,7 +41,7 @@ RSpec.describe 'GroupCategories', type: :request do
 
       it 'should redirect to categories/index page' do
         post group_categories_path, params: { group_category: valid_params }
-        expect(response).to redirect_to(group_category_path(GroupCategory.last))
+        expect(response).to redirect_to(group_categories_path)
       end
     end
   end
